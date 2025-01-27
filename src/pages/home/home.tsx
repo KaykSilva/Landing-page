@@ -15,7 +15,7 @@ const Home: React.FC = () => {
             <div className="header">
                 <Header />
             </div>
-            <div className="home-container">
+            <div className="home-container section">
                 <section className="initial">
                     <div className="initial-title">
                         <h1>Desenvolvedor web & alguma coisa</h1>
@@ -39,15 +39,15 @@ const Home: React.FC = () => {
                     <img src={gif} alt="Macho, tu ta atras doq aqui?" />
                 </section>
 
-                <div className="github-calendar">
+                <div className="github-calendar section">
                     <div className="calendar">
                         <h1>Contribuitons of the last year</h1>
-                        ;<GitHubCalendar username="KaykSilva" />
+                        <GitHubCalendar username="KaykSilva" />
                     </div>
 
                 </div>
 
-                <section className="work-experience">
+                <section className="work-experience section">
                     <h1>Work Experience</h1>
                     <div className="works">
                         <div className="ifma">
@@ -86,8 +86,9 @@ const Home: React.FC = () => {
                         </div>
                     </div>
                 </section>
+               
             </div>
-            
+
         </>
     )
 }
