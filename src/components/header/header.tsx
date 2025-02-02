@@ -1,11 +1,17 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import './header.css';
 
 const Header: React.FC = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const { i18n } = useTranslation();
 
     const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen); // Alterna o estado do menu
+        setIsMenuOpen(!isMenuOpen);
+    };
+
+    const toggleLanguage = () => {
+        i18n.changeLanguage(i18n.language === "pt" ? "en" : "pt");
     };
 
     return (
@@ -26,6 +32,9 @@ const Header: React.FC = () => {
                     <li><a href="#contato">Contato</a></li>
                 </ul>
             </nav>
+            <button className="translate-btn" onClick={toggleLanguage}>
+                {i18n.language === "pt" ? "EN" : "PT"}
+            </button>
         </header>
     );
 };
